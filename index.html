@@ -5,28 +5,45 @@
 
 <style>
 body {
-  font-family: 'Segoe UI', Arial;
   margin: 0;
-  background: linear-gradient(to right, #eef2f3, #dfe9f3);
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f172a;
+  color: white;
+  transition: background 0.5s, color 0.5s;
+}
+
+/* LIGHT MODE */
+.light-mode {
+  background: #f5f7fa;
   color: #2c3e50;
 }
 
 /* HEADER */
 .header {
-  background: linear-gradient(135deg, #1a73e8, #6a11cb);
-  color: white;
-  padding: 60px 20px;
   text-align: center;
-  animation: fadeIn 2s ease;
+  padding: 80px 20px;
 }
 
-.header h1 {
-  font-size: 40px;
-  margin-bottom: 10px;
+h1 {
+  font-size: 42px;
 }
 
-.header p {
-  font-size: 18px;
+.typing {
+  font-size: 20px;
+  color: #38bdf8;
+}
+
+/* TOGGLE BUTTON */
+.toggle-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  border: none;
+  background: #38bdf8;
+  color: black;
+  cursor: pointer;
+  border-radius: 8px;
 }
 
 /* SECTION */
@@ -34,127 +51,163 @@ body {
   padding: 40px;
 }
 
-/* CARD STYLE */
+/* CARDS */
 .card {
-  background: white;
+  background: #1e293b;
   padding: 20px;
   margin: 20px 0;
   border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: 0.4s;
+  opacity: 0;
+  transform: translateY(50px);
 }
 
-/* HOVER EFFECT */
+.light-mode .card {
+  background: white;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transform: scale(1.05);
 }
 
-/* HEADINGS */
-h2 {
-  border-left: 5px solid #1a73e8;
-  padding-left: 10px;
-  margin-top: 40px;
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #38bdf8;
+  color: black;
+  border-radius: 6px;
+  text-decoration: none;
 }
 
-/* ANIMATION */
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-/* SKILLS TAGS */
+/* SKILLS */
 .skills span {
   display: inline-block;
-  background: #1a73e8;
-  color: white;
-  padding: 8px 12px;
+  background: #38bdf8;
+  color: black;
+  padding: 6px 10px;
   margin: 5px;
   border-radius: 20px;
-  font-size: 14px;
 }
 
-/* FOOTER */
-.footer {
-  text-align: center;
-  padding: 20px;
-  color: #555;
+/* SECTION TITLE */
+h2 {
+  margin-top: 40px;
+  border-left: 4px solid #38bdf8;
+  padding-left: 10px;
 }
+
 </style>
-
 </head>
 
 <body>
 
+<button class="toggle-btn" onclick="toggleMode()">🌙</button>
+
 <div class="header">
   <h1>Rupkatha Ray</h1>
-  <p>AI | Data Science | Computational Systems</p>
+  <p class="typing" id="typing"></p>
 </div>
 
 <div class="container">
 
 <h2>About Me</h2>
 <div class="card">
-Computer Science Engineer specializing in Data Science with strong interest in Artificial Intelligence, machine learning, and scalable systems. Passionate about building intelligent solutions and exploring research-driven approaches.
+Computer Science Engineer specializing in Data Science with strong interest in AI, ML, and scalable systems. Passionate about building intelligent and research-driven solutions.
 </div>
 
 <h2>Projects</h2>
 
 <div class="card">
 <b>PotherPanchali.AI</b><br>
-AI-based travel planner with route optimization and real-time APIs.
+AI travel planner with route optimization.<br>
+<a href="#" class="btn">View Project</a>
 </div>
 
 <div class="card">
 <b>JugaadKitchen.AI 🏆</b><br>
-AI recipe system using NLP & GPT. Winner of ACM UG Project Contest.
+AI recipe system using NLP & GPT.<br>
+<a href="#" class="btn">View Project</a>
 </div>
 
 <div class="card">
 <b>Movie Recommendation System</b><br>
-Collaborative filtering-based personalized system.
-</div>
-
-<div class="card">
-<b>YouTube Video Summarizer</b><br>
-NLP-based automatic summarization tool.
+Personalized recommendation engine.<br>
+<a href="#" class="btn">View Project</a>
 </div>
 
 <h2>Skills</h2>
 <div class="card skills">
 <span>Python</span>
-<span>Machine Learning</span>
+<span>ML</span>
 <span>TensorFlow</span>
 <span>SQL</span>
 <span>Cloud</span>
-<span>APIs</span>
 </div>
 
 <h2>Experience</h2>
 <div class="card">
-TCS – Assistant System Engineer Trainee  
-<br>Worked on SDLC, coding, cloud technologies, and system workflows.
+TCS – Assistant System Engineer Trainee<br>
+Worked on SDLC, cloud, and system workflows.
 </div>
 
 <h2>Research Interests</h2>
 <div class="card">
-Machine Learning • Data Science • Computational Optimization • Scalable Systems
-</div>
-
-<h2>Contact</h2>
-<div class="card">
-Email: your email <br>
-GitHub: itsRupkatha <br>
-LinkedIn: your link
+Machine Learning • Data Science • Optimization • Scalable Systems
 </div>
 
 </div>
 
-<div class="footer">
-© 2026 Rupkatha Ray
-</div>
+<script>
+/* DARK MODE */
+function toggleMode() {
+  document.body.classList.toggle("light-mode");
+}
+
+/* TYPING ANIMATION */
+const text = ["AI Enthusiast", "Data Science Learner", "Future Researcher"];
+let i = 0, j = 0;
+let currentText = "", isDeleting = false;
+
+function type() {
+  currentText = text[i];
+  
+  if (!isDeleting) {
+    document.getElementById("typing").innerHTML = currentText.substring(0, j++);
+    if (j > currentText.length) {
+      isDeleting = true;
+      setTimeout(type, 1000);
+      return;
+    }
+  } else {
+    document.getElementById("typing").innerHTML = currentText.substring(0, j--);
+    if (j === 0) {
+      isDeleting = false;
+      i = (i + 1) % text.length;
+    }
+  }
+  setTimeout(type, isDeleting ? 50 : 100);
+}
+type();
+
+/* SCROLL ANIMATION */
+const cards = document.querySelectorAll(".card");
+
+window.addEventListener("scroll", () => {
+  cards.forEach(card => {
+    const top = card.getBoundingClientRect().top;
+    if (top < window.innerHeight - 50) {
+      card.classList.add("show");
+    }
+  });
+});
+</script>
 
 </body>
 </html>
-
- 
