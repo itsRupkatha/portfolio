@@ -13,7 +13,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background: #0f172a;
   color: white;
-  transition: 0.5s;
+  transition: 0.6s;
 }
 
 /* LIGHT MODE */
@@ -25,34 +25,40 @@ body {
 /* HEADER */
 .header {
   text-align: center;
-  padding: 80px 20px;
+  padding: 100px 20px;
+  animation: fadeIn 1.5s ease;
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 50px;
   margin: 0;
 }
 
 .typing {
   font-size: 20px;
   color: #38bdf8;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 .email {
-  margin-top: 10px;
+  margin-top: 12px;
   color: #facc15;
   font-weight: bold;
-  animation: glow 1.5s infinite alternate;
+  animation: glow 2s infinite alternate;
 }
 
-/* GLOW */
+/* ANIMATIONS */
 @keyframes glow {
   from { opacity: 0.6; }
   to { opacity: 1; }
 }
 
-/* BUTTON */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* TOGGLE */
 .toggle {
   position: fixed;
   top: 20px;
@@ -71,38 +77,38 @@ h1 {
   padding: 20px;
 }
 
-/* SECTION TITLE */
+/* TITLES */
 h2 {
   border-left: 4px solid #38bdf8;
-  padding-left: 10px;
-  margin-top: 50px;
+  padding-left: 12px;
+  margin-top: 60px;
 }
 
 /* CARDS */
 .card {
   background: #1e293b;
-  padding: 20px;
+  padding: 22px;
   margin-top: 20px;
-  border-radius: 12px;
-  transition: all 0.4s ease;
+  border-radius: 14px;
+  transition: all 0.5s ease;
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(60px);
 }
 
 .light .card {
   background: white;
 }
 
-/* SCROLL ANIMATION */
+/* SCROLL */
 .card.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* HOVER EFFECT */
+/* HOVER */
 .card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
 }
 
 /* SKILLS */
@@ -110,10 +116,21 @@ h2 {
   display: inline-block;
   background: #38bdf8;
   color: black;
-  padding: 6px 12px;
+  padding: 6px 14px;
   margin: 6px;
   border-radius: 20px;
   font-size: 14px;
+}
+
+/* TIMELINE */
+.timeline {
+  border-left: 3px solid #38bdf8;
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.timeline-item {
+  margin-bottom: 20px;
 }
 
 /* FOOTER */
@@ -146,37 +163,36 @@ h2 {
 
 <h2>About Me</h2>
 <div class="card">
-Computer Science Engineer specializing in Data Science with strong foundations in Machine Learning, Statistics, and algorithmic problem-solving. My work focuses on building intelligent systems using data-driven modeling, optimization techniques, and scalable architectures, with a growing interest in research-driven AI systems.
+I am a Computer Science Engineer specializing in Data Science, with strong foundations in Machine Learning, Statistics, and algorithmic problem-solving. My work focuses on designing intelligent systems that integrate data-driven modeling with optimization and scalability. I am particularly interested in advancing research in Artificial Intelligence and computational systems.
 </div>
 
 <h2>Experience</h2>
 
 <div class="card">
 <b>TCS – Assistant System Engineer Trainee</b><br>
-Worked on production-level systems involving SDLC, cloud technologies, debugging, and performance optimization. Developed strong skills in system workflows and real-world problem solving.
+Worked on production-level systems involving SDLC, cloud technologies, debugging, and performance optimization.
 </div>
 
 <div class="card">
 <b>50 Hertz Limited – Intern</b><br>
-Analyzed power demand using SCADA systems and applied forecasting techniques for optimization.
+Analyzed power demand patterns using SCADA systems and forecasting techniques.
 </div>
 
 <div class="card">
 <b>Celebal Technologies – Intern</b><br>
-Worked on real-world development tasks, improving technical and analytical capabilities.
+Worked on real-world development tasks and improved analytical capabilities.
 </div>
 
 <h2>Projects</h2>
 
 <div class="card">
 <b>PotherPanchali.AI</b><br>
-AI-based travel planner using APIs and optimization algorithms (TSP) to generate efficient itineraries.
+AI-based travel planner using APIs and optimization algorithms (TSP) for efficient itinerary generation.
 </div>
 
 <div class="card">
 <b>JugaadKitchen.AI 🏆</b><br>
-AI-powered recipe system using NLP and GPT-2 with Ingredient Complexity Scoring for personalization.  
-🥉 ACM UG Project Contest Winner.
+AI-powered recipe system using NLP and GPT-2 with Ingredient Complexity Scoring. ACM Award Winner.
 </div>
 
 <div class="card">
@@ -186,7 +202,7 @@ Implemented collaborative filtering and matrix factorization for personalized re
 
 <div class="card">
 <b>YouTube Video Summarizer</b><br>
-Developed NLP-based summarization system for efficient content extraction.
+Developed NLP-based system for automatic content summarization.
 </div>
 
 <h2>Skills</h2>
@@ -202,12 +218,20 @@ Developed NLP-based summarization system for efficient content extraction.
 
 <h2>Achievements</h2>
 <div class="card">
-🥉 ACM UG Project Contest 2025 – 3rd Prize (Generative AI Project)
+🥉 ACM UG Project Contest 2025 – 3rd Prize
 </div>
 
 <h2>Research Interests</h2>
 <div class="card">
 Machine Learning • Data Science • Optimization • Scalable Systems • AI Research
+</div>
+
+<h2>Journey</h2>
+<div class="card timeline">
+<div class="timeline-item"><b>2021–2025:</b> B.Tech in Computer Science (Data Science)</div>
+<div class="timeline-item"><b>2024:</b> Internships (Celebal + 50 Hertz)</div>
+<div class="timeline-item"><b>2025:</b> ACM Award (AI Project)</div>
+<div class="timeline-item"><b>2026:</b> TCS – Industry Experience</div>
 </div>
 
 </div>
@@ -234,7 +258,7 @@ function type(){
     document.getElementById("typing").innerHTML = current.substring(0,j++);
     if(j>current.length){
       deleting=true;
-      setTimeout(type,1000);
+      setTimeout(type,1200);
       return;
     }
   } else {
@@ -245,16 +269,16 @@ function type(){
     }
   }
 
-  setTimeout(type,deleting?50:100);
+  setTimeout(type,deleting?60:120);
 }
 type();
 
-/* SCROLL ANIMATION */
+/* SCROLL */
 const cards = document.querySelectorAll(".card");
 
 window.addEventListener("scroll", () => {
   cards.forEach(card => {
-    if(card.getBoundingClientRect().top < window.innerHeight - 50){
+    if(card.getBoundingClientRect().top < window.innerHeight - 80){
       card.classList.add("show");
     }
   });
