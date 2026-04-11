@@ -9,7 +9,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background: #0f172a;
   color: white;
-  transition: background 0.5s, color 0.5s;
+  transition: 0.5s;
 }
 
 /* LIGHT MODE */
@@ -25,7 +25,8 @@ body {
 }
 
 h1 {
-  font-size: 42px;
+  font-size: 45px;
+  margin-bottom: 10px;
 }
 
 .typing {
@@ -33,25 +34,26 @@ h1 {
   color: #38bdf8;
 }
 
-/* TOGGLE BUTTON */
+/* TOGGLE */
 .toggle-btn {
   position: fixed;
   top: 20px;
   right: 20px;
-  padding: 10px 15px;
+  padding: 10px;
   border: none;
   background: #38bdf8;
-  color: black;
   cursor: pointer;
   border-radius: 8px;
 }
 
-/* SECTION */
+/* CONTAINER */
 .container {
   padding: 40px;
+  max-width: 1000px;
+  margin: auto;
 }
 
-/* CARDS */
+/* CARD */
 .card {
   background: #1e293b;
   padding: 20px;
@@ -59,7 +61,7 @@ h1 {
   border-radius: 12px;
   transition: 0.4s;
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(40px);
 }
 
 .light-mode .card {
@@ -73,6 +75,12 @@ h1 {
 
 .card:hover {
   transform: scale(1.05);
+}
+
+/* HEADINGS */
+h2 {
+  border-left: 4px solid #38bdf8;
+  padding-left: 10px;
 }
 
 /* BUTTON */
@@ -96,11 +104,16 @@ h1 {
   border-radius: 20px;
 }
 
-/* SECTION TITLE */
-h2 {
-  margin-top: 40px;
-  border-left: 4px solid #38bdf8;
-  padding-left: 10px;
+/* EMAIL FLASH */
+.email {
+  font-size: 18px;
+  color: #facc15;
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  from {opacity: 0.6;}
+  to {opacity: 1;}
 }
 
 </style>
@@ -113,96 +126,116 @@ h2 {
 <div class="header">
   <h1>Rupkatha Ray</h1>
   <p class="typing" id="typing"></p>
+  <p class="email">📧 rupkatha3107@gmail.com</p>
 </div>
 
 <div class="container">
 
 <h2>About Me</h2>
 <div class="card">
-Computer Science Engineer specializing in Data Science with strong interest in AI, ML, and scalable systems. Passionate about building intelligent and research-driven solutions.
+Computer Science Engineer specializing in Data Science with strong foundations in Machine Learning, Statistics, and algorithmic problem-solving. My work focuses on designing intelligent systems that combine data-driven modeling with optimization, particularly through generative AI and scalable architectures.
+</div>
+
+<h2>Experience</h2>
+
+<div class="card">
+<b>TCS – Assistant System Engineer Trainee</b><br>
+Worked on production-level systems, focusing on scalable code, cloud architecture, and performance optimization. Built strong expertise in SDLC, data handling, and real-world problem solving.
+</div>
+
+<div class="card">
+<b>50 Hertz Limited – Intern</b><br>
+Analyzed power demand patterns using SCADA systems and forecasting techniques to improve efficiency.
+</div>
+
+<div class="card">
+<b>Celebal Technologies – Intern</b><br>
+Worked on real-world technical projects and enhanced problem-solving skills.
 </div>
 
 <h2>Projects</h2>
 
 <div class="card">
 <b>PotherPanchali.AI</b><br>
-AI travel planner with route optimization.<br>
-<a href="#" class="btn">View Project</a>
+AI-powered travel planner using Firebase, APIs, and TSP algorithm for route optimization.<br>
+<a href="https://github.com/itsRupkatha" class="btn">View Project</a>
 </div>
 
 <div class="card">
 <b>JugaadKitchen.AI 🏆</b><br>
-AI recipe system using NLP & GPT.<br>
-<a href="#" class="btn">View Project</a>
+AI recipe system using GPT-2, NLP, and ICS algorithm. ACM Award Winner.<br>
+<a href="https://github.com/itsRupkatha" class="btn">View Project</a>
 </div>
 
 <div class="card">
 <b>Movie Recommendation System</b><br>
-Personalized recommendation engine.<br>
+Built using collaborative filtering and matrix factorization.<br>
+<a href="#" class="btn">View Project</a>
+</div>
+
+<div class="card">
+<b>YouTube Video Summarizer</b><br>
+NLP-based system for efficient content summarization.<br>
 <a href="#" class="btn">View Project</a>
 </div>
 
 <h2>Skills</h2>
 <div class="card skills">
 <span>Python</span>
-<span>ML</span>
+<span>Machine Learning</span>
 <span>TensorFlow</span>
+<span>Keras</span>
 <span>SQL</span>
 <span>Cloud</span>
+<span>React</span>
 </div>
 
-<h2>Experience</h2>
+<h2>Achievements</h2>
 <div class="card">
-TCS – Assistant System Engineer Trainee<br>
-Worked on SDLC, cloud, and system workflows.
+🥉 ACM UG Project Contest 2025 – 3rd Prize for JugaadKitchen.AI
 </div>
 
 <h2>Research Interests</h2>
 <div class="card">
-Machine Learning • Data Science • Optimization • Scalable Systems
+Machine Learning • Data Science • Optimization • Scalable Systems • AI Research
 </div>
 
 </div>
 
 <script>
-/* DARK MODE */
 function toggleMode() {
   document.body.classList.toggle("light-mode");
 }
 
-/* TYPING ANIMATION */
-const text = ["AI Enthusiast", "Data Science Learner", "Future Researcher"];
-let i = 0, j = 0;
-let currentText = "", isDeleting = false;
+/* TYPING */
+const text = ["AI Enthusiast", "Data Science Engineer", "Future Researcher"];
+let i = 0, j = 0, current = "", deleting = false;
 
 function type() {
-  currentText = text[i];
-  
-  if (!isDeleting) {
-    document.getElementById("typing").innerHTML = currentText.substring(0, j++);
-    if (j > currentText.length) {
-      isDeleting = true;
+  current = text[i];
+  if (!deleting) {
+    document.getElementById("typing").innerHTML = current.substring(0, j++);
+    if (j > current.length) {
+      deleting = true;
       setTimeout(type, 1000);
       return;
     }
   } else {
-    document.getElementById("typing").innerHTML = currentText.substring(0, j--);
+    document.getElementById("typing").innerHTML = current.substring(0, j--);
     if (j === 0) {
-      isDeleting = false;
+      deleting = false;
       i = (i + 1) % text.length;
     }
   }
-  setTimeout(type, isDeleting ? 50 : 100);
+  setTimeout(type, deleting ? 50 : 100);
 }
 type();
 
-/* SCROLL ANIMATION */
+/* SCROLL */
 const cards = document.querySelectorAll(".card");
-
 window.addEventListener("scroll", () => {
   cards.forEach(card => {
-    const top = card.getBoundingClientRect().top;
-    if (top < window.innerHeight - 50) {
+    if (card.getBoundingClientRect().top < window.innerHeight - 50) {
       card.classList.add("show");
     }
   });
