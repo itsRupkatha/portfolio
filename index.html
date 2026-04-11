@@ -110,13 +110,13 @@ h2:hover::after {
 /* PROJECT GRID */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
 }
 
 .project-card {
   background: rgba(255,255,255,0.05);
-  padding: 20px;
+  padding: 22px;
   border-radius: 16px;
   transition: 0.5s;
   opacity: 0;
@@ -165,13 +165,13 @@ h2:hover::after {
 
 <h2>About Me</h2>
 <div class="card">
-Computer Science Engineer specializing in Data Science with strong foundations in ML, statistics, and optimization. Focused on building intelligent real-world systems.
+Computer Science Engineer specializing in Data Science with strong foundations in Machine Learning, Statistics, and algorithmic problem-solving. Focused on building intelligent systems using data-driven modeling, optimization techniques, and scalable architectures.
 </div>
 
 <h2>Education</h2>
 
 <div class="card">
-<b>B.Tech CSE (Data Science)</b><br>
+<b>B.Tech in Computer Science (Data Science)</b><br>
 Techno Main Salt Lake (MAKAUT) | 2021–2025
 </div>
 
@@ -187,9 +187,24 @@ South Point High School | 95%
 
 <h2>Experience</h2>
 
-<div class="card">TCS – SDLC, cloud, debugging, optimization</div>
-<div class="card">50 Hertz – SCADA + forecasting</div>
-<div class="card">Celebal – development + problem solving</div>
+<div class="card">
+<b>TCS – Assistant System Engineer Trainee</b><br>
+• Worked across the Software Development Life Cycle (SDLC), including requirement analysis, testing, and deployment workflows.<br>
+• Gained hands-on experience in debugging, optimizing code, and improving system performance in production environments.<br>
+• Developed understanding of cloud-based architectures, data handling, and scalable system design.
+</div>
+
+<div class="card">
+<b>50 Hertz Limited – Intern</b><br>
+• Analyzed real-time power demand data using SCADA systems.<br>
+• Applied forecasting techniques to enhance efficiency and system reliability.
+</div>
+
+<div class="card">
+<b>Celebal Technologies – Intern</b><br>
+• Worked on industry-oriented technical problems, strengthening problem-solving and analytical skills.<br>
+• Gained exposure to collaborative development and real-world system implementation.
+</div>
 
 <h2>Projects</h2>
 
@@ -197,22 +212,27 @@ South Point High School | 95%
 
 <div class="project-card">
 <b>PotherPanchali.AI</b><br>
-AI travel planner using TSP optimization.
+• Developed an AI-based travel planner integrating APIs and optimization algorithms (TSP).<br>
+• Focused on generating efficient, data-driven travel itineraries.
 </div>
 
 <div class="project-card">
 <b>JugaadKitchen.AI 🏆</b><br>
-NLP + GPT-based recipe system.
+• Built a generative AI system using NLP and GPT-2 for recipe recommendations.<br>
+• Designed Ingredient Complexity Scoring for personalized suggestions.<br>
+• Awarded 3rd place in ACM UG Project Contest.
 </div>
 
 <div class="project-card">
-<b>Movie Recommender</b><br>
-Collaborative filtering system.
+<b>Movie Recommendation System</b><br>
+• Implemented collaborative filtering and matrix factorization techniques.<br>
+• Delivered personalized content recommendations based on user behavior.
 </div>
 
 <div class="project-card">
-<b>YouTube Summarizer</b><br>
-NLP summarization system.
+<b>YouTube Video Summarizer</b><br>
+• Developed an NLP-based system for automated video content summarization.<br>
+• Improved content accessibility through concise information extraction.
 </div>
 
 </div>
@@ -221,13 +241,15 @@ NLP summarization system.
 <div class="card skills">
 <span>Python</span><span>Java</span><span>C</span><span>SQL</span>
 <span>Machine Learning</span><span>TensorFlow</span><span>Keras</span>
-<span>NLP</span><span>Data Analysis</span>
-<span>Cloud</span><span>Firebase</span>
+<span>NLP</span><span>Data Analysis</span><span>Statistical Modeling</span>
+<span>Cloud</span><span>Firebase</span><span>API Integration</span>
 <span>React</span><span>HTML/CSS</span>
 </div>
 
 <h2>Achievements</h2>
-<div class="card">🥉 ACM UG Project Contest – Generative AI</div>
+<div class="card">
+🥉 ACM UG Project Contest – Generative AI Project
+</div>
 
 </div>
 
@@ -236,7 +258,7 @@ NLP summarization system.
 <script>
 
 /* TYPING */
-const words = ["AI Enthusiast","Data Science Engineer","ML Explorer"];
+const words = ["AI Enthusiast","Data Science Engineer","Machine Learning Explorer"];
 let i=0,j=0,del=false;
 
 function type(){
