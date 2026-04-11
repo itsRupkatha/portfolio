@@ -11,8 +11,9 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #0f172a;
+  background: radial-gradient(circle at top, #0f172a, #020617);
   color: white;
+  overflow-x: hidden;
   transition: 0.6s;
 }
 
@@ -25,37 +26,32 @@ body {
 /* HEADER */
 .header {
   text-align: center;
-  padding: 100px 20px;
+  padding: 120px 20px;
   animation: fadeIn 1.5s ease;
 }
 
 h1 {
-  font-size: 50px;
-  margin: 0;
+  font-size: 52px;
+  letter-spacing: 1px;
 }
 
 .typing {
   font-size: 20px;
   color: #38bdf8;
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
+/* EMAIL GLOW */
 .email {
-  margin-top: 12px;
+  margin-top: 10px;
   color: #facc15;
   font-weight: bold;
   animation: glow 2s infinite alternate;
 }
 
-/* ANIMATIONS */
 @keyframes glow {
   from { opacity: 0.6; }
   to { opacity: 1; }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px);}
-  to { opacity: 1; transform: translateY(0);}
 }
 
 /* TOGGLE */
@@ -63,11 +59,12 @@ h1 {
   position: fixed;
   top: 20px;
   right: 20px;
-  background: #38bdf8;
+  background: rgba(255,255,255,0.1);
   border: none;
   padding: 10px;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
+  backdrop-filter: blur(10px);
 }
 
 /* CONTAINER */
@@ -77,72 +74,84 @@ h1 {
   padding: 20px;
 }
 
-/* TITLES */
+/* SECTION TITLE */
 h2 {
-  border-left: 4px solid #38bdf8;
-  padding-left: 12px;
-  margin-top: 60px;
+  margin-top: 70px;
+  font-size: 22px;
+  opacity: 0.9;
 }
 
-/* CARDS */
+/* GLASS CARD */
 .card {
-  background: #1e293b;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
   padding: 22px;
   margin-top: 20px;
-  border-radius: 14px;
-  transition: all 0.5s ease;
+  border-radius: 16px;
+  transition: all 0.6s ease;
   opacity: 0;
-  transform: translateY(60px);
+  transform: translateY(80px);
 }
 
+/* LIGHT MODE CARD */
 .light .card {
   background: white;
 }
 
-/* SCROLL */
+/* REVEAL */
 .card.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* HOVER */
+/* HOVER (NETFLIX STYLE) */
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  transform: scale(1.03);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
 }
 
 /* SKILLS */
 .skills span {
   display: inline-block;
-  background: #38bdf8;
-  color: black;
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  color: white;
   padding: 6px 14px;
   margin: 6px;
   border-radius: 20px;
   font-size: 14px;
+  transition: 0.3s;
+}
+
+.skills span:hover {
+  transform: scale(1.1);
 }
 
 /* TIMELINE */
 .timeline {
-  border-left: 3px solid #38bdf8;
-  margin-top: 20px;
+  border-left: 2px solid rgba(255,255,255,0.3);
   padding-left: 20px;
 }
 
 .timeline-item {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+}
+
+/* FADE IN */
+@keyframes fadeIn {
+  from {opacity:0; transform: translateY(20px);}
+  to {opacity:1; transform: translateY(0);}
 }
 
 /* FOOTER */
 .footer {
   text-align: center;
-  padding: 30px;
+  padding: 40px;
   color: gray;
 }
 
 /* MOBILE */
 @media(max-width: 600px){
-  h1 { font-size: 32px; }
+  h1 { font-size: 34px; }
 }
 
 </style>
@@ -163,46 +172,43 @@ h2 {
 
 <h2>About Me</h2>
 <div class="card">
-I am a Computer Science Engineer specializing in Data Science, with strong foundations in Machine Learning, Statistics, and algorithmic problem-solving. My work focuses on designing intelligent systems that integrate data-driven modeling with optimization and scalability. I am particularly interested in advancing research in Artificial Intelligence and computational systems.
+Computer Science Engineer specializing in Data Science with strong foundations in Machine Learning and optimization. Focused on building intelligent systems and exploring research-driven AI solutions.
 </div>
 
 <h2>Experience</h2>
 
 <div class="card">
-<b>TCS – Assistant System Engineer Trainee</b><br>
-Worked on production-level systems involving SDLC, cloud technologies, debugging, and performance optimization.
+<b>TCS</b> – Worked on SDLC, cloud systems, and performance optimization in production environments.
 </div>
 
 <div class="card">
-<b>50 Hertz Limited – Intern</b><br>
-Analyzed power demand patterns using SCADA systems and forecasting techniques.
+<b>50 Hertz Limited</b> – Power demand analysis using SCADA and forecasting models.
 </div>
 
 <div class="card">
-<b>Celebal Technologies – Intern</b><br>
-Worked on real-world development tasks and improved analytical capabilities.
+<b>Celebal Technologies</b> – Real-world development experience and problem-solving.
 </div>
 
 <h2>Projects</h2>
 
 <div class="card">
 <b>PotherPanchali.AI</b><br>
-AI-based travel planner using APIs and optimization algorithms (TSP) for efficient itinerary generation.
+AI travel planner using optimization algorithms and APIs.
 </div>
 
 <div class="card">
 <b>JugaadKitchen.AI 🏆</b><br>
-AI-powered recipe system using NLP and GPT-2 with Ingredient Complexity Scoring. ACM Award Winner.
+Generative AI system using NLP & GPT with custom scoring algorithm.
 </div>
 
 <div class="card">
 <b>Movie Recommendation System</b><br>
-Implemented collaborative filtering and matrix factorization for personalized recommendations.
+Personalized recommendation engine using collaborative filtering.
 </div>
 
 <div class="card">
 <b>YouTube Video Summarizer</b><br>
-Developed NLP-based system for automatic content summarization.
+NLP-based summarization for efficient content understanding.
 </div>
 
 <h2>Skills</h2>
@@ -210,7 +216,6 @@ Developed NLP-based system for automatic content summarization.
 <span>Python</span>
 <span>Machine Learning</span>
 <span>TensorFlow</span>
-<span>Keras</span>
 <span>SQL</span>
 <span>Cloud</span>
 <span>React</span>
@@ -218,20 +223,15 @@ Developed NLP-based system for automatic content summarization.
 
 <h2>Achievements</h2>
 <div class="card">
-🥉 ACM UG Project Contest 2025 – 3rd Prize
-</div>
-
-<h2>Research Interests</h2>
-<div class="card">
-Machine Learning • Data Science • Optimization • Scalable Systems • AI Research
+🥉 ACM UG Project Contest – Generative AI Project
 </div>
 
 <h2>Journey</h2>
 <div class="card timeline">
-<div class="timeline-item"><b>2021–2025:</b> B.Tech in Computer Science (Data Science)</div>
-<div class="timeline-item"><b>2024:</b> Internships (Celebal + 50 Hertz)</div>
-<div class="timeline-item"><b>2025:</b> ACM Award (AI Project)</div>
-<div class="timeline-item"><b>2026:</b> TCS – Industry Experience</div>
+<div class="timeline-item"><b>2021–2025:</b> B.Tech (Data Science)</div>
+<div class="timeline-item"><b>2024:</b> Internships</div>
+<div class="timeline-item"><b>2025:</b> ACM Award</div>
+<div class="timeline-item"><b>2026:</b> TCS</div>
 </div>
 
 </div>
@@ -248,7 +248,7 @@ function toggleMode(){
 }
 
 /* TYPING */
-const words = ["AI Enthusiast", "Data Science Engineer", "Future Researcher"];
+const words = ["AI Enthusiast", "Data Scientist", "Future Researcher"];
 let i=0,j=0,current="",deleting=false;
 
 function type(){
@@ -273,15 +273,19 @@ function type(){
 }
 type();
 
-/* SCROLL */
+/* NETFLIX SCROLL EFFECT */
 const cards = document.querySelectorAll(".card");
 
-window.addEventListener("scroll", () => {
-  cards.forEach(card => {
-    if(card.getBoundingClientRect().top < window.innerHeight - 80){
-      card.classList.add("show");
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
     }
   });
+}, {threshold: 0.15});
+
+cards.forEach(card => {
+  observer.observe(card);
 });
 
 </script>
