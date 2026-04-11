@@ -41,7 +41,7 @@ h1 {
   margin-top: 10px;
 }
 
-/* EMAIL GLOW */
+/* EMAIL */
 .email {
   margin-top: 10px;
   color: #facc15;
@@ -81,7 +81,7 @@ h2 {
   opacity: 0.9;
 }
 
-/* GLASS CARD */
+/* GLASS CARDS */
 .card {
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(12px);
@@ -93,18 +93,17 @@ h2 {
   transform: translateY(80px);
 }
 
-/* LIGHT MODE CARD */
 .light .card {
   background: white;
 }
 
-/* REVEAL */
+/* SCROLL REVEAL */
 .card.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* HOVER (NETFLIX STYLE) */
+/* HOVER */
 .card:hover {
   transform: scale(1.03);
   box-shadow: 0 20px 50px rgba(0,0,0,0.4);
@@ -136,7 +135,7 @@ h2 {
   margin-bottom: 15px;
 }
 
-/* FADE IN */
+/* FADE */
 @keyframes fadeIn {
   from {opacity:0; transform: translateY(20px);}
   to {opacity:1; transform: translateY(0);}
@@ -172,53 +171,67 @@ h2 {
 
 <h2>About Me</h2>
 <div class="card">
-Computer Science Engineer specializing in Data Science with strong foundations in Machine Learning and optimization. Focused on building intelligent systems and exploring research-driven AI solutions.
+Computer Science Engineer specializing in Data Science with strong foundations in Machine Learning, Statistics, and algorithmic problem-solving. I focus on building intelligent systems using data-driven modeling, optimization techniques, and scalable architectures, with a strong interest in real-world AI applications.
 </div>
 
 <h2>Experience</h2>
 
 <div class="card">
-<b>TCS</b> – Worked on SDLC, cloud systems, and performance optimization in production environments.
+<b>TCS</b> – Worked on SDLC, cloud systems, debugging, and performance optimization in production environments.
 </div>
 
 <div class="card">
-<b>50 Hertz Limited</b> – Power demand analysis using SCADA and forecasting models.
+<b>50 Hertz Limited</b> – Power demand analysis using SCADA systems and forecasting models.
 </div>
 
 <div class="card">
-<b>Celebal Technologies</b> – Real-world development experience and problem-solving.
+<b>Celebal Technologies</b> – Worked on real-world development and problem-solving.
 </div>
 
 <h2>Projects</h2>
 
 <div class="card">
 <b>PotherPanchali.AI</b><br>
-AI travel planner using optimization algorithms and APIs.
+AI-based travel planner using APIs and optimization algorithms (TSP) for efficient itinerary generation.
 </div>
 
 <div class="card">
 <b>JugaadKitchen.AI 🏆</b><br>
-Generative AI system using NLP & GPT with custom scoring algorithm.
+AI-powered recipe system using NLP and GPT-2 with Ingredient Complexity Scoring. ACM Award Winner.
 </div>
 
 <div class="card">
 <b>Movie Recommendation System</b><br>
-Personalized recommendation engine using collaborative filtering.
+Personalized recommendation engine using collaborative filtering and matrix factorization.
 </div>
 
 <div class="card">
 <b>YouTube Video Summarizer</b><br>
-NLP-based summarization for efficient content understanding.
+NLP-based system for automatic content summarization.
 </div>
 
 <h2>Skills</h2>
 <div class="card skills">
 <span>Python</span>
+<span>Java</span>
+<span>C</span>
+<span>SQL</span>
+
 <span>Machine Learning</span>
 <span>TensorFlow</span>
-<span>SQL</span>
-<span>Cloud</span>
+<span>Keras</span>
+<span>Pandas</span>
+
+<span>NLP</span>
+<span>Data Analysis</span>
+<span>Statistical Modeling</span>
+
+<span>Cloud Computing</span>
+<span>Firebase</span>
+<span>API Integration</span>
+
 <span>React</span>
+<span>HTML/CSS</span>
 </div>
 
 <h2>Achievements</h2>
@@ -248,7 +261,7 @@ function toggleMode(){
 }
 
 /* TYPING */
-const words = ["AI Enthusiast", "Data Scientist", "Future Researcher"];
+const words = ["AI Enthusiast", "Data Science Engineer", "Machine Learning Explorer"];
 let i=0,j=0,current="",deleting=false;
 
 function type(){
@@ -273,7 +286,7 @@ function type(){
 }
 type();
 
-/* NETFLIX SCROLL EFFECT */
+/* NETFLIX SCROLL */
 const cards = document.querySelectorAll(".card");
 
 const observer = new IntersectionObserver(entries => {
@@ -284,9 +297,7 @@ const observer = new IntersectionObserver(entries => {
   });
 }, {threshold: 0.15});
 
-cards.forEach(card => {
-  observer.observe(card);
-});
+cards.forEach(card => observer.observe(card));
 
 </script>
 
