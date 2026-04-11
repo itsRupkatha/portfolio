@@ -41,6 +41,13 @@ body {
 h1 {
   font-size: 52px;
   letter-spacing: 1px;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px);}
+  50% { transform: translateY(-10px);}
+  100% { transform: translateY(0px);}
 }
 
 /* TYPING */
@@ -90,7 +97,6 @@ h2 {
   position: relative;
 }
 
-/* UNDERLINE ANIMATION */
 h2::after {
   content: "";
   width: 0%;
@@ -118,7 +124,6 @@ h2:hover::after {
   transform: translateY(80px) scale(0.95);
 }
 
-/* LIGHT CARD */
 .light .card {
   background: white;
 }
@@ -151,13 +156,6 @@ h2:hover::after {
   transform: scale(1.15);
 }
 
-/* FLOAT ANIMATION */
-@keyframes float {
-  0% { transform: translateY(0px);}
-  50% { transform: translateY(-10px);}
-  100% { transform: translateY(0px);}
-}
-
 /* FOOTER */
 .footer {
   text-align: center;
@@ -185,7 +183,7 @@ h2:hover::after {
 <button class="toggle" onclick="toggleMode()">🌙</button>
 
 <div class="header">
-  <h1 style="animation: float 4s ease-in-out infinite;">Rupkatha Ray</h1>
+  <h1>Rupkatha Ray</h1>
   <p class="typing" id="typing"></p>
   <p class="email">📧 rupkatha3107@gmail.com</p>
 </div>
@@ -198,6 +196,7 @@ Computer Science Engineer specializing in Data Science with strong foundations i
 </div>
 
 <h2>Education</h2>
+
 <div class="card">
 <b>B.Tech in Computer Science (Data Science)</b><br>
 Techno Main Salt Lake (MAKAUT) | 2021–2025
@@ -205,12 +204,12 @@ Techno Main Salt Lake (MAKAUT) | 2021–2025
 
 <div class="card">
 <b>Class 12 (CBSE)</b><br>
-94.2%
+Your School Name | 94.2%
 </div>
 
 <div class="card">
 <b>Class 10 (CBSE)</b><br>
-95%
+Your School Name | 95%
 </div>
 
 <h2>Experience</h2>
@@ -317,7 +316,7 @@ function type(){
 }
 type();
 
-/* SMOOTH SCROLL ANIMATION */
+/* SCROLL ANIMATION */
 const cards = document.querySelectorAll(".card");
 
 const observer = new IntersectionObserver(entries => {
