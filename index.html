@@ -3,7 +3,11 @@
 <head>
 <title>Rupkatha Ray</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
+
+/* GLOBAL */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -13,9 +17,9 @@ body {
 }
 
 /* LIGHT MODE */
-.light-mode {
-  background: #f5f7fa;
-  color: #2c3e50;
+.light {
+  background: #f8fafc;
+  color: #1e293b;
 }
 
 /* HEADER */
@@ -25,73 +29,80 @@ body {
 }
 
 h1 {
-  font-size: 45px;
-  margin-bottom: 10px;
+  font-size: 48px;
+  margin: 0;
 }
 
 .typing {
   font-size: 20px;
   color: #38bdf8;
+  margin-top: 10px;
 }
 
-/* TOGGLE */
-.toggle-btn {
+.email {
+  margin-top: 10px;
+  color: #facc15;
+  font-weight: bold;
+  animation: glow 1.5s infinite alternate;
+}
+
+/* GLOW */
+@keyframes glow {
+  from { opacity: 0.6; }
+  to { opacity: 1; }
+}
+
+/* BUTTON */
+.toggle {
   position: fixed;
   top: 20px;
   right: 20px;
-  padding: 10px;
-  border: none;
   background: #38bdf8;
-  cursor: pointer;
+  border: none;
+  padding: 10px;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 /* CONTAINER */
 .container {
-  padding: 40px;
   max-width: 1000px;
   margin: auto;
+  padding: 20px;
 }
 
-/* CARD */
+/* SECTION TITLE */
+h2 {
+  border-left: 4px solid #38bdf8;
+  padding-left: 10px;
+  margin-top: 50px;
+}
+
+/* CARDS */
 .card {
   background: #1e293b;
   padding: 20px;
-  margin: 20px 0;
+  margin-top: 20px;
   border-radius: 12px;
-  transition: 0.4s;
+  transition: all 0.4s ease;
   opacity: 0;
   transform: translateY(40px);
 }
 
-.light-mode .card {
+.light .card {
   background: white;
 }
 
+/* SCROLL ANIMATION */
 .card.show {
   opacity: 1;
   transform: translateY(0);
 }
 
+/* HOVER EFFECT */
 .card:hover {
-  transform: scale(1.05);
-}
-
-/* HEADINGS */
-h2 {
-  border-left: 4px solid #38bdf8;
-  padding-left: 10px;
-}
-
-/* BUTTON */
-.btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 12px;
-  background: #38bdf8;
-  color: black;
-  border-radius: 6px;
-  text-decoration: none;
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
 /* SKILLS */
@@ -99,29 +110,31 @@ h2 {
   display: inline-block;
   background: #38bdf8;
   color: black;
-  padding: 6px 10px;
-  margin: 5px;
+  padding: 6px 12px;
+  margin: 6px;
   border-radius: 20px;
+  font-size: 14px;
 }
 
-/* EMAIL FLASH */
-.email {
-  font-size: 18px;
-  color: #facc15;
-  animation: glow 1.5s infinite alternate;
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 30px;
+  color: gray;
 }
 
-@keyframes glow {
-  from {opacity: 0.6;}
-  to {opacity: 1;}
+/* MOBILE */
+@media(max-width: 600px){
+  h1 { font-size: 32px; }
 }
 
 </style>
+
 </head>
 
 <body>
 
-<button class="toggle-btn" onclick="toggleMode()">🌙</button>
+<button class="toggle" onclick="toggleMode()">🌙</button>
 
 <div class="header">
   <h1>Rupkatha Ray</h1>
@@ -133,50 +146,47 @@ h2 {
 
 <h2>About Me</h2>
 <div class="card">
-Computer Science Engineer specializing in Data Science with strong foundations in Machine Learning, Statistics, and algorithmic problem-solving. My work focuses on designing intelligent systems that combine data-driven modeling with optimization, particularly through generative AI and scalable architectures.
+Computer Science Engineer specializing in Data Science with strong foundations in Machine Learning, Statistics, and algorithmic problem-solving. My work focuses on building intelligent systems using data-driven modeling, optimization techniques, and scalable architectures, with a growing interest in research-driven AI systems.
 </div>
 
 <h2>Experience</h2>
 
 <div class="card">
 <b>TCS – Assistant System Engineer Trainee</b><br>
-Worked on production-level systems, focusing on scalable code, cloud architecture, and performance optimization. Built strong expertise in SDLC, data handling, and real-world problem solving.
+Worked on production-level systems involving SDLC, cloud technologies, debugging, and performance optimization. Developed strong skills in system workflows and real-world problem solving.
 </div>
 
 <div class="card">
 <b>50 Hertz Limited – Intern</b><br>
-Analyzed power demand patterns using SCADA systems and forecasting techniques to improve efficiency.
+Analyzed power demand using SCADA systems and applied forecasting techniques for optimization.
 </div>
 
 <div class="card">
 <b>Celebal Technologies – Intern</b><br>
-Worked on real-world technical projects and enhanced problem-solving skills.
+Worked on real-world development tasks, improving technical and analytical capabilities.
 </div>
 
 <h2>Projects</h2>
 
 <div class="card">
 <b>PotherPanchali.AI</b><br>
-AI-powered travel planner using Firebase, APIs, and TSP algorithm for route optimization.<br>
-<a href="https://github.com/itsRupkatha" class="btn">View Project</a>
+AI-based travel planner using APIs and optimization algorithms (TSP) to generate efficient itineraries.
 </div>
 
 <div class="card">
 <b>JugaadKitchen.AI 🏆</b><br>
-AI recipe system using GPT-2, NLP, and ICS algorithm. ACM Award Winner.<br>
-<a href="https://github.com/itsRupkatha" class="btn">View Project</a>
+AI-powered recipe system using NLP and GPT-2 with Ingredient Complexity Scoring for personalization.  
+🥉 ACM UG Project Contest Winner.
 </div>
 
 <div class="card">
 <b>Movie Recommendation System</b><br>
-Built using collaborative filtering and matrix factorization.<br>
-<a href="#" class="btn">View Project</a>
+Implemented collaborative filtering and matrix factorization for personalized recommendations.
 </div>
 
 <div class="card">
 <b>YouTube Video Summarizer</b><br>
-NLP-based system for efficient content summarization.<br>
-<a href="#" class="btn">View Project</a>
+Developed NLP-based summarization system for efficient content extraction.
 </div>
 
 <h2>Skills</h2>
@@ -192,7 +202,7 @@ NLP-based system for efficient content summarization.<br>
 
 <h2>Achievements</h2>
 <div class="card">
-🥉 ACM UG Project Contest 2025 – 3rd Prize for JugaadKitchen.AI
+🥉 ACM UG Project Contest 2025 – 3rd Prize (Generative AI Project)
 </div>
 
 <h2>Research Interests</h2>
@@ -202,44 +212,54 @@ Machine Learning • Data Science • Optimization • Scalable Systems • AI R
 
 </div>
 
+<div class="footer">
+© 2026 Rupkatha Ray
+</div>
+
 <script>
-function toggleMode() {
-  document.body.classList.toggle("light-mode");
+
+/* DARK MODE */
+function toggleMode(){
+  document.body.classList.toggle("light");
 }
 
 /* TYPING */
-const text = ["AI Enthusiast", "Data Science Engineer", "Future Researcher"];
-let i = 0, j = 0, current = "", deleting = false;
+const words = ["AI Enthusiast", "Data Science Engineer", "Future Researcher"];
+let i=0,j=0,current="",deleting=false;
 
-function type() {
-  current = text[i];
-  if (!deleting) {
-    document.getElementById("typing").innerHTML = current.substring(0, j++);
-    if (j > current.length) {
-      deleting = true;
-      setTimeout(type, 1000);
+function type(){
+  current = words[i];
+
+  if(!deleting){
+    document.getElementById("typing").innerHTML = current.substring(0,j++);
+    if(j>current.length){
+      deleting=true;
+      setTimeout(type,1000);
       return;
     }
   } else {
-    document.getElementById("typing").innerHTML = current.substring(0, j--);
-    if (j === 0) {
-      deleting = false;
-      i = (i + 1) % text.length;
+    document.getElementById("typing").innerHTML = current.substring(0,j--);
+    if(j===0){
+      deleting=false;
+      i=(i+1)%words.length;
     }
   }
-  setTimeout(type, deleting ? 50 : 100);
+
+  setTimeout(type,deleting?50:100);
 }
 type();
 
-/* SCROLL */
+/* SCROLL ANIMATION */
 const cards = document.querySelectorAll(".card");
+
 window.addEventListener("scroll", () => {
   cards.forEach(card => {
-    if (card.getBoundingClientRect().top < window.innerHeight - 50) {
+    if(card.getBoundingClientRect().top < window.innerHeight - 50){
       card.classList.add("show");
     }
   });
 });
+
 </script>
 
 </body>
